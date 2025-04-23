@@ -1,0 +1,87 @@
+.chakri{
+    display: grid;
+    grid-template-columns: repeat(5, 5fr);
+    column-gap: 60px;
+    row-gap: 50px; 
+    padding: 30px;
+    max-width: 1400px;
+    padding: 0 0 0 30px;
+    margin: 0;
+}
+
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 80%;
+    transition: transform 0.3s ease;
+  }
+
+  .product-image {
+    width: 100%;
+
+    object-fit: cover;
+    
+  }
+  
+  .product-details {
+    padding: 12px;
+  }
+  
+  .product-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  .heading {
+      grid-column: 1 / -1;  /* Spans full width */
+      margin: 30px 0;
+      padding: 10px;
+      color: #333;
+      font-size: 24px;
+      text-align: left;
+      border-bottom: 2px solid #f57c00;
+  }
+  .product-volume {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+  
+  .product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 12px 12px 10PX;
+  }
+  
+  .price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #f57c00;
+    margin-right:20px;
+  }
+
+  footer{
+    position:fixed;
+    display:block;
+    bottom:0;
+    width: 100%;
+    margin: 0;
+    left:0;
+    background-color: black;
+    z-index: 10;
+  }
+  
+  .icons {
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+    color: aqua;
+  margin:0;
+    
+    padding: 20px 0;}

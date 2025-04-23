@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vend Maadi - Sign Up</title>
+    <link rel="stylesheet" href="signup.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Create Your Account</h1>
+        <p>Join Vend Maadi to start shopping</p>
+      </div>
+
+      <form class="signup-form" id="signupForm">
+        <div class="input-group">
+          <i class="bx bxs-user"></i>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Full Name"
+            minlength="3"
+            required
+          />
+        </div>
+
+        <div class="input-group">
+          <i class="bx bxs-phone"></i>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="Phone Number (10 digits)"
+            pattern="[0-9]{10}"
+            title="10 digit phone number"
+            required
+          />
+        </div>
+
+        <div class="input-group">
+          <i class="bx bxs-lock-alt"></i>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Password (6-12 characters)"
+            minlength="6"
+            maxlength="12"
+            required
+          />
+        </div>
+
+        <div class="input-group">
+          <i class="bx bxs-lock"></i>
+          <input
+            type="password"
+            id="confirmPassword"
+            name="confirmPassword"
+            placeholder="Confirm Password"
+            minlength="6"
+            maxlength="12"
+            required
+          />
+        </div>
+
+        <div class="form-footer">
+          <button type="submit" class="btn-signup">Sign Up</button>
+          <button type="reset" class="btn-reset">Clear</button>
+          <p class="login-link">
+            Already have an account? <a href="HOME.html">Log In</a>
+          </p>
+        </div>
+      </form>
+    </div>
+
+    <div id="loading" class="loading">
+      <div class="spinner"></div>
+      <p>Creating your account...</p>
+    </div>
+
+    <div id="error-message" class="error-message"></div>
+
+    <script src="signup.js"></script>
+  </body>
+</html>

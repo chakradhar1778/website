@@ -1,0 +1,72 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.total {
+    background: transparent;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    text-align: center;
+}
+.total:hover{
+    box-shadow:0 8px 10px black;
+    
+}
+
+.heading h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="tel"],
+input[type="password"],input[type="name"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button[type="login"],
+button[type="reset"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button[type="submit"] {
+    background: #ff7e5f;
+    color: white;
+    margin-bottom: 10px;
+    transition: background 0.3s;
+}
+
+button[type="login"]:hover {
+    background: #feb47b;
+}
+
+button[type="rest"] {
+    background: #ddd;
+    color: #333;
+    transition: background 0.3s;
+}
+
+button[type="reset"]:hover {
+    background: #bbb;
+}

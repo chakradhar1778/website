@@ -1,0 +1,470 @@
+<h1 class="heading" id="biscuits">
+        BISCUITS AND CREAM SPREAD
+    </h1>
+    <div class="grid">
+      <div class="products">
+        <div class="product-card">
+          <img
+            src="https://m.media-amazon.com/images/I/51uhJOPnIbL.jpg"
+            alt="Oreo Original Biscuits"
+            class="product-image"
+          />
+          <div class="product-details">
+            <h2 class="product-name">Oreo Original Biscuits</h2>
+            <p class="product-volume">120gm</p>
+            <div class="product-footer">
+              <span class="price">₹40</span>
+              <div class="quantity-controls" style="display: none;">
+                <button type="button" class="quantity-btn minus">-</button>
+                <span class="quantity">1</span>
+                <button type="button" class="quantity-btn plus">+</button>
+            </div>
+              <button class="add-button">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img
+            src="photos/parle-G"
+            alt="Parle-G Biscuits"
+            class="product-image"
+          />
+          <div class="product-details">
+            <h2 class="product-name">Parle-G Biscuits</h2>
+            <p class="product-volume">100gm</p>
+            <div class="product-footer">
+              <span class="price">₹10</span>
+              <div class="quantity-controls" style="display: none;">
+                <button type="button" class="quantity-btn minus">-</button>
+                <span class="quantity">1</span>
+                <button type="button" class="quantity-btn plus">+</button>
+            </div>
+              <button class="add-button">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img
+            src="https://rukminim2.flixcart.com/image/850/1000/xif0q/wafer-waffle/w/s/4/-original-imah7kyyrfmhuntj.jpeg?q=90&crop=false"
+            alt="Britannia Strawberry Wafers"
+            class="product-image"
+          />
+          <div class="product-details">
+            <h2 class="product-name">Britannia Strawberry Wafers</h2>
+            <p class="product-volume">75gm</p>
+            <div class="product-footer">
+              <span class="price">₹25</span>
+              <div class="quantity-controls" style="display: none;">
+                <button type="button" class="quantity-btn minus">-</button>
+                <span class="quantity">1</span>
+                <button type="button" class="quantity-btn plus">+</button>
+            </div>
+              <button class="add-button">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img
+            src="https://m.media-amazon.com/images/I/81TsQlSqfHL.jpg"
+            alt="Nutella Hazelnut Spread"
+            class="product-image"
+          />
+          <div class="product-details">
+            <h2 class="product-name">Nutella Hazelnut Spread</h2>
+            <p class="product-volume">350gm</p>
+            <div class="product-footer">
+              <span class="price">₹350</span>
+              <div class="quantity-controls" style="display: none;">
+                <button type="button" class="quantity-btn minus">-</button>
+                <span class="quantity">1</span>
+                <button type="button" class="quantity-btn plus">+</button>
+            </div>
+              <button class="add-button">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img
+            src="photos/milk powder"
+            alt="Amul Spray Milk Powder"
+            class="product-image"
+          />
+          <div class="product-details">
+            <h2 class="product-name">Amul Spray Milk Powder</h2>
+            <p class="product-volume">500gm</p>
+            <div class="product-footer">
+              <span class="price">₹190</span>
+              <div class="quantity-controls" style="display: none;">
+                <button type="button" class="quantity-btn minus">-</button>
+                <span class="quantity">1</span>
+                <button type="button" class="quantity-btn plus">+</button>
+            </div>
+              <button class="add-button">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+    <h1 class="heading" id="snacks">
+SNACKS
+    </h1>
+
+        <div class="product-card">
+          <img
+            src="photos/lays.jpg"
+            alt="Lays Classic Salted"
+            class="product-image"
+          />
+          <div class="product-details">
+            <h2 class="product-name">Lays Classic Salted</h2>
+            <p class="product-volume">100gm</p>
+            <div class="product-footer">
+              <span class="price">₹35</span>
+              <div class="quantity-controls" style="display: none;">
+                <button type="button" class="quantity-btn minus">-</button>
+                <span class="quantity">1</span>
+                <button type="button" class="quantity-btn plus">+</button>
+            </div>
+              <button class="add-button">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img
+            src="photos/maggi.jpeg"
+            alt="Maggi Noodles"
+            class="product-image"
+          />
+          <div class="product-details">
+            <h2 class="product-name">Maggi Noodles</h2>
+            <p class="product-volume">70gm</p>
+            <div class="product-footer">
+              <span class="price">₹12</span>
+              <div class="quantity-controls" style="display: none;">
+                <button type="button" class="quantity-btn minus">-</button>
+                <span class="quantity">1</span>
+                <button type="button" class="quantity-btn plus">+</button>
+            </div>
+              <button class="add-button">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <img
+            src="https://m.media-amazon.com/images/I/71syW2KpA1L._AC_UF1000,1000_QL80_.jpg"
+            alt="Doritos Nacho Cheese"
+            class="product-image"
+          />
+          <div class="product-details">
+            <h2 class="product-name">Doritos Nacho Cheese</h2>
+            <p class="product-volume">150gm</p>
+            <div class="product-footer">
+              <span class="price">₹85</span>
+              <div class="quantity-controls" style="display: none;">
+                <button type="button" class="quantity-btn minus">-</button>
+                <span class="quantity">1</span>
+                <button type="button" class="quantity-btn plus">+</button>
+            </div>
+              <button class="add-button">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <img
+            src="https://rukminim2.flixcart.com/image/850/1000/l37mtu80/chips/i/i/t/165-original-barbeque-1-pringles-original-imagedwzwg5rtqqv.jpeg?q=20&crop=false"
+            alt="Pringles Original"
+            class="product-image"
+          />
+          <div class="product-details">
+            <h2 class="product-name">Pringles Original</h2>
+            <p class="product-volume">107gm</p>
+            <div class="product-footer">
+              <span class="price">₹150</span>
+              <div class="quantity-controls" style="display: none;">
+                <button type="button" class="quantity-btn minus">-</button>
+                <span class="quantity">1</span>
+                <button type="button" class="quantity-btn plus">+</button>
+            </div>
+              <button class="add-button">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <img
+            src="photos/frooti.webp"
+            alt="Frooti Mango Drink"
+            class="product-image"
+          />
+          <div class="product-details">
+            <h2 class="product-name">Frooti Mango Drink</h2>
+            <p class="product-volume">250ml</p>
+            <div class="product-footer">
+              <span class="price">₹25</span>
+              <div class="quantity-controls" style="display: none;">
+                <button type="button" class="quantity-btn minus">-</button>
+                <span class="quantity">1</span>
+                <button type="button" class="quantity-btn plus">+</button>
+            </div>
+              <button class="add-button">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+<h1 class="heading" id="chocolates">
+CHOCOLATES
+</h1>
+        <div class="product-card">
+          <img
+            src="https://www.jiomart.com/images/product/original/490001864/kitkat-chocolate-38-5-g-product-images-o490001864-p490001864-0-202308080311.jpg?im=Resize=(1000,1000)"
+            alt="KitKat Chocolate Bar"
+            class="product-image"
+          />
+          <div class="product-details">
+            <h2 class="product-name">KitKat Chocolate Bar</h2>
+            <p class="product-volume">37gm</p>
+            <div class="product-footer">
+              <span class="price">₹30</span>
+              <div class="quantity-controls" style="display: none;">
+                <button type="button" class="quantity-btn minus">-</button>
+                <span class="quantity">1</span>
+                <button type="button" class="quantity-btn plus">+</button>
+            </div>
+              <button class="add-button">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img
+            src="photos/dairy milk"
+            alt="Dairy Milk Chocolate"
+            class="product-image"
+          />
+          <div class="product-details">
+            <h2 class="product-name">Dairy Milk Chocolate</h2>
+            <p class="product-volume">50gm</p>
+            <div class="product-footer">
+              <span class="price">₹40</span>
+              <div class="quantity-controls" style="display: none;">
+                <button type="button" class="quantity-btn minus">-</button>
+                <span class="quantity">1</span>
+                <button type="button" class="quantity-btn plus">+</button>
+            </div>
+              <button class="add-button">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img
+            src="https://www.optislim.co.nz/cdn/shop/files/17.png?v=1728624360&width=3840"
+            alt="shake to go"
+            class="product-image"
+          />
+          <div class="product-details">
+            <h2 class="product-name">shake to go</h2>
+            <p class="product-volume">350ml</p>
+            <div class="product-footer">
+              <span class="price">₹120</span>
+              <div class="quantity-controls" style="display: none;">
+                <button type="button" class="quantity-btn minus">-</button>
+                <span class="quantity">1</span>
+                <button type="button" class="quantity-btn plus">+</button>
+            </div>
+              <button class="add-button">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img
+            src="https://www.kitkat.in/sites/default/files/styles/full_width_image_1920x795_/public/2024-12/KitKat%202F.png?itok=Jh53izsc"
+            alt="KitKat Mini"
+            class="product-image"
+          />
+          <div class="product-details">
+            <h2 class="product-name">KitKat Mini</h2>
+            <p class="product-volume">10gm</p>
+            <div class="product-footer">
+              <span class="price">₹20</span>
+              <div class="quantity-controls" style="display: none;">
+                <button type="button" class="quantity-btn minus">-</button>
+                <span class="quantity">1</span>
+                <button type="button" class="quantity-btn plus">+</button>
+            </div>
+              <button class="add-button">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img
+            src="https://www.bigbasket.com/media/uploads/p/xl/40241856-2_5-snickers-kesar-pista-chocolate-bar-premium-quality.jpg"
+            alt="Snickers Bar"
+            class="product-image"
+          />
+          <div class="product-details">
+            <h2 class="product-name">Snickers Bar</h2>
+            <p class="product-volume">45gm</p>
+            <div class="product-footer">
+              <span class="price">₹50</span>
+              <div class="quantity-controls" style="display: none;">
+                <button type="button" class="quantity-btn minus">-</button>
+                <span class="quantity">1</span>
+                <button type="button" class="quantity-btn plus">+</button>
+            </div>
+              <button class="add-button">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+<H1 class="heading" id="beverages">
+BEVARAGES
+</H1>
+        <div class="product-card">
+          <img
+            src="https://www.jiomart.com/images/product/original/491322205/nestle-milo-cocoa-malt-flavoured-milk-180-ml-tetra-pak-product-images-o491322205-p590124557-0-202305040332.jpg?im=Resize=(1000,1000)"
+            alt="Nestle Milo"
+            class="product-image"
+          />
+          <div class="product-details">
+            <h2 class="product-name">Nestle Milo</h2>
+            <p class="product-volume">200gm</p>
+            <div class="product-footer">
+              <span class="price">₹130</span>
+              <div class="quantity-controls" style="display: none;">
+                <button type="button" class="quantity-btn minus">-</button>
+                <span class="quantity">1</span>
+                <button type="button" class="quantity-btn plus">+</button>
+            </div>
+              <button class="add-button">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <img
+            src="photos/mineral water"
+            alt="Mineral Water Bottle"
+            class="product-image"
+          />
+          <div class="product-details">
+            <h2 class="product-name">Mineral Water Bottle</h2>
+            <p class="product-volume">1L</p>
+            <div class="product-footer">
+              <span class="price">₹20</span>
+              <div class="quantity-controls" style="display: none;">
+                <button type="button" class="quantity-btn minus">-</button>
+                <span class="quantity">1</span>
+                <button type="button" class="quantity-btn plus">+</button>
+            </div>
+              <button class="add-button">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img
+            src="https://frugivore-bucket.s3.amazonaws.com/media/package/img_one/2020-10-17/Sprite_Soft_Drink_1.25l.jpg"
+            alt="Sprite Soft Drink"
+            class="product-image"
+          />
+          <div class="product-details">
+            <h2 class="product-name">Sprite Soft Drink</h2>
+            <p class="product-volume">750ml</p>
+            <div class="product-footer">
+              <span class="price">₹50</span>
+              <div class="quantity-controls" style="display: none;">
+                <button type="button" class="quantity-btn minus">-</button>
+                <span class="quantity">1</span>
+                <button type="button" class="quantity-btn plus">+</button>
+            </div>
+              <button class="add-button">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img
+            src="photos/coco"
+            alt="Coca-Cola Zero Sugar"
+            class="product-image"
+          />
+          <div class="product-details">
+            <h2 class="product-name">Coca-Cola Zero Sugar</h2>
+            <p class="product-volume">500ml</p>
+            <div class="product-footer">
+              <span class="price">₹50</span>
+              <div class="quantity-controls" style="display: none;">
+                <button type="button" class="quantity-btn minus">-</button>
+                <span class="quantity">1</span>
+                <button type="button" class="quantity-btn plus">+</button>
+            </div>
+              <button class="add-button">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/8.4_floz_can_of_Red_Bull_Energy_Drink.jpg/800px-8.4_floz_can_of_Red_Bull_Energy_Drink.jpg "
+            alt="Red Bull Energy Drink"
+            class="product-image"
+          />
+          <div class="product-details">
+            <h2 class="product-name">Red Bull Energy Drink</h2>
+            <p class="product-volume">250ml</p>
+            <div class="product-footer">
+              <span class="price">₹110</span>
+              <div class="quantity-controls" style="display: none;">
+                <button type="button" class="quantity-btn minus">-</button>
+                <span class="quantity">1</span>
+                <button type="button" class="quantity-btn plus">+</button>
+            </div>
+              <button class="add-button">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img
+            src="photos/pepsi-500ml-in-bulk-500x500.webp"
+            alt="Pepsi "
+            class="product-image"
+          />
+          <div class="product-details">
+            <h2 class="product-name">Pepsi</h2>
+            <p class="product-volume">500ml</p>
+            <div class="product-footer">
+              <span class="price">₹45</span>
+              <div class="quantity-controls" style="display: none;">
+                <button type="button" class="quantity-btn minus">-</button>
+                <span class="quantity">1</span>
+                <button type="button" class="quantity-btn plus">+</button>
+            </div>
+              <button class="add-button">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <img
+            src="photos/real fruit"
+            alt="Real Fruit Juice"
+            class="product-image"
+          />
+          <div class="product-details">
+            <h2 class="product-name">Real Fruit Juice</h2>
+            <p class="product-volume">1L</p>
+            <div class="product-footer">
+              <span class="price">₹90</span>
+              <div class="quantity-controls" style="display: none;">
+                <button type="button" class="quantity-btn minus">-</button>
+                <span class="quantity">1</span>
+                <button type="button" class="quantity-btn plus">+</button>
+            </div>
+              <button class="add-button">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>

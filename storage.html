@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vend Maadi - Products</title>
+    <link rel="stylesheet" href="storage.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <h1>All Products</h1>
+      <p>Infinite Munchies</p>
+    </header>
+
+    <main class="product-container">
+      <section id="biscuits" class="product-section">
+        <h2 class="section-title">Biscuits & Cream</h2>
+        <div class="products" id="biscuitsAndCreamProducts"></div>
+      </section>
+
+      <section id="snacks" class="product-section">
+        <h2 class="section-title">Snacks</h2>
+        <div class="products" id="snacksProducts"></div>
+      </section>
+
+      <section id="chocolates" class="product-section">
+        <h2 class="section-title">Chocolates</h2>
+        <div class="products" id="chocolatesProducts"></div>
+      </section>
+
+      <section id="beverages" class="product-section">
+        <h2 class="section-title">Beverages</h2>
+        <div class="products" id="beveragesProducts"></div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="icons">
+        <div class="icon" onclick="window.location.href='page.html'">
+          <i class="fas fa-home"></i>
+        </div>
+        <div class="icon" onclick="window.location.href='hello.html'">
+          <i class="fas fa-search"></i>
+        </div>
+        <div class="icon" onclick="window.location.href='cart.html'">
+          <i class="fas fa-shopping-cart"></i>
+        </div>
+        <div class="icon" onclick="alert('Account')">
+          <i class="fas fa-user"></i>
+        </div>
+      </div>
+    </footer>
+    <script src="storage.js"></script>
+  </body>
+</html>
