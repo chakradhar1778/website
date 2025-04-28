@@ -308,6 +308,7 @@ const products = {
 
 document.addEventListener("DOMContentLoaded", function () {
   // Render products for each category
+  getCart();
   Object.keys(products).forEach((category) => {
     const container = document.getElementById(`${category}Products`);
 
@@ -344,6 +345,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const minusBtn = card.querySelector(".minus");
     const plusBtn = card.querySelector(".plus");
 
+    if (localStorage.getItem("cart")) {
+      if (JSON.parse(localStorage.getItem("cart"))[product.id]?.quantity) {
+        if (quantityControls.style.display === "none") {
+          quantityControls.style.display = "flex";
+          addButton.textContent = "Update Cart";
+          quantity.textContent =
+            JSON.parse(localStorage.getItem("cart"))[product.id]?.quantity ||
+            "";
+        }
+      }
+    }
+
     addButton.addEventListener("click", function () {
       if (quantityControls.style.display === "none") {
         quantityControls.style.display = "flex";
@@ -377,6 +390,46 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     return card;
+  }
+
+  async function getCart() {
+    try {
+      const userId = localStorage.getItem("userId");
+      if (!userId) {
+        console.error("No user ID found");
+        return;
+      }
+
+      const response = await fetch(
+        `http://localhost:3001/api/cart?userId=${userId}`
+      );
+
+      const data = await response.json();
+
+      if (data.success) {
+        let cart = JSON.parse(localStorage.getItem("cart")) || {};
+        data.cart.map((ele) => {
+          const category = Object.keys(products);
+          category.forEach((catg) => {
+            const item = products[catg].find(
+              (itm) => itm.id === ele.product_id
+            );
+            console.log(item);
+
+            if (item) {
+              item.quantity = ele.quantity;
+              cart[item.id] = item;
+            }
+          });
+        });
+        localStorage.setItem("cart", JSON.stringify(cart));
+        updateCartIcon();
+      } else {
+        console.error("Failed to initialize cart:", data.error);
+      }
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   async function updateCart(product, quantity) {

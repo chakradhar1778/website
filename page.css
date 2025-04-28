@@ -111,11 +111,25 @@ body {
 
 footer {
   position: fixed;
-  display: block;
   bottom: 0;
   width: 100%;
-  margin: 0;
-  left: 0;
-  background-color: black;
-  z-index: 10;
+  background: white;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+}
+
+.icons {
+  display: flex;
+  justify-content: space-around;
+  padding: 15px 0;
+}
+
+.icon {
+  color: #666;
+  font-size: 1.5em;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.icon:hover {
+  color: #f57c00;
 }

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Account - Vend Maadi</title>
+    <link rel="stylesheet" href="account.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="profile-card">
+            <div class="avatar" id="userAvatar"></div>
+            <div class="user-info">
+                <h1 id="userName"></h1>
+                <div class="info-row">
+                    <i class="fas fa-envelope"></i>
+                    <span id="userEmail"></span>
+                </div>
+                <div class="info-row">
+                    <i class="fas fa-phone"></i>
+                    <span id="userPhone"></span>
+                </div>
+            </div>
+            <div>
+                <button class="logout-button" id="logoutButton">Logout</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="icons">
+            <div class="icon" onclick="window.location.href='page.html'">
+                <i class="fas fa-home"></i>
+            </div>
+            <div class="icon" onclick="window.location.href='cart.html'">
+                <i class="fas fa-shopping-cart"></i>
+            </div>
+            <div class="icon active">
+                <i class="fas fa-user"></i>
+            </div>
+        </div>
+    </footer>
+    <script src="account.js"></script>
+</body>
+</html>
