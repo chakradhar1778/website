@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: #f5f5f5;
   min-height: 100vh;
   padding-bottom: 80px;
@@ -16,7 +16,7 @@ body {
   color: white;
   padding: 30px 20px;
   text-align: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .cart-subtitle {
@@ -47,7 +47,7 @@ body {
   grid-template-columns: 120px 1fr auto;
   gap: 20px;
   align-items: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .item-image {
@@ -105,7 +105,7 @@ body {
   position: sticky;
   top: 20px;
   height: fit-content;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .summary-details {
@@ -141,7 +141,7 @@ footer {
   bottom: 0;
   width: 100%;
   background: white;
-  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .icons {
@@ -159,4 +159,205 @@ footer {
 
 .icon:hover {
   color: #f57c00;
+}
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background: white;
+  margin: 15% auto;
+  padding: 30px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+  animation: modalSlide 0.3s ease;
+}
+
+@keyframes modalSlide {
+  from {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+}
+
+#qrcode {
+  margin: 20px auto;
+  padding: 15px;
+  background: white;
+  border-radius: 10px;
+  width: fit-content;
+}
+
+.amount-text {
+  font-size: 1.2em;
+  margin: 15px 0;
+  color: #333;
+}
+
+.payment-btn {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 5px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.payment-btn:hover {
+  background: #45a049;
+}
+
+.success {
+  color: #4caf50;
+}
+
+.success i {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+#payment-close-btn {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 5px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.close-btn {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 5px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.cancel-btn,
+.confirm-btn {
+  padding: 10px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
+
+.cancel-btn {
+  background: #666;
+  color: white;
+}
+
+.confirm-btn {
+  background: #f44336;
+  color: white;
+}
+
+#clear-cart {
+  background: #f44336;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 5px;
+  margin-top: 20px;
+  cursor: pointer;
+  width: 100%;
+}
+/* Add to existing CSS */
+.payment-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.app-select-btn {
+  background: #fff;
+  color: #333;
+  border: 2px solid #ddd;
+  padding: 12px 25px;
+  border-radius: 5px;
+  font-size: 1.1em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+}
+
+.app-select-btn:hover {
+  border-color: #f57c00;
+  color: #f57c00;
+}
+
+.app-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.app-btn {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.app-btn:hover {
+  background: #f5f5f5;
+  border-color: #f57c00;
+}
+
+.app-btn img {
+  width: 80px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.modal {
+  transition: opacity 0.3s ease;
+}
+
+.modal.fade-out {
+  opacity: 0;
 }

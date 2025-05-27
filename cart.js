@@ -120,7 +120,7 @@ const products = {
     },
     {
       id: "choco_003",
-      name: "shake to go",
+      name: "Shake To Go",
       price: 120,
       stock: Math.floor(Math.random() * 50) + 10,
       quantity: 1,
@@ -223,6 +223,132 @@ getCart();
 const cartItems = JSON.parse(localStorage.getItem("cart")) || {};
 
 document.addEventListener("DOMContentLoaded", function () {
+  // Restore modal state if it was open
+  const modalState = sessionStorage.getItem("modalState");
+  if (modalState) {
+    const { type, amount } = JSON.parse(modalState);
+    if (type === "qr") {
+      generateQR(parseFloat(amount));
+      document.getElementById("qr-modal").style.display = "block";
+    }
+  }
+
+  // Select app button
+  document.getElementById("select-app").addEventListener("click", function () {
+    document.getElementById("qr-modal").classList.add("fade-out");
+    setTimeout(() => {
+      document.getElementById("qr-modal").style.display = "none";
+      document.getElementById("qr-modal").classList.remove("fade-out");
+      document.getElementById("app-modal").style.display = "block";
+    }, 300);
+  });
+
+  // App selection
+  document.querySelectorAll(".app-btn").forEach((btn) => {
+    btn.addEventListener("click", function () {
+      const appName = this.dataset.app;
+      alert(
+        `Please complete the payment in your ${appName.toUpperCase()} mobile app`
+      );
+      document.getElementById("app-modal").style.display = "none";
+      document.getElementById("qr-modal").style.display = "block";
+    });
+  });
+
+  // Payment done button
+  document
+    .getElementById("payment-done")
+    .addEventListener("click", function () {
+      document.getElementById("qr-modal").style.display = "none";
+      document.getElementById("success-modal").style.display = "block";
+      sessionStorage.removeItem("modalState"); // Clear modal state
+    });
+
+  // Close buttons
+  document.querySelectorAll(".close, .close-btn").forEach((button) => {
+    button.addEventListener("click", function () {
+      const modal = this.closest(".modal");
+      modal.classList.add("fade-out");
+      setTimeout(() => {
+        modal.style.display = "none";
+        modal.classList.remove("fade-out");
+      }, 300);
+      sessionStorage.removeItem("modalState");
+    });
+  });
+
+  document
+    .querySelector("#payment-close-btn")
+    .addEventListener("click", async function () {
+      document.getElementById("qr-modal").style.display = "none";
+      document.getElementById("success-modal").style.display = "none";
+
+      const productIds = Object.keys(cartItems);
+
+      let total = 0;
+
+      Object.values(cartItems).forEach((item) => {
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+      });
+
+      try {
+        const response = await fetch("http://localhost:3001/api/payment", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            userId: localStorage.getItem("userId"),
+            cartItems: JSON.stringify(productIds),
+            price: total,
+          }),
+        });
+        localStorage.setItem("cart", "{}");
+        if (!response.ok) {
+          throw new Error("Failed to Make Payment");
+        }
+      } catch (err) {
+        console.error("Error making payment:", err);
+        throw err;
+      }
+      location.reload();
+    });
+
+  // Update the checkout button click handler
+  document
+    .getElementById("checkout-btn")
+    .addEventListener("click", function () {
+      const total = parseFloat(
+        document.getElementById("total-price").textContent.replace("₹", "")
+      );
+      generateQR(total);
+      document.getElementById("qr-modal").style.display = "block";
+      // Save modal state
+      sessionStorage.setItem(
+        "modalState",
+        JSON.stringify({
+          type: "qr",
+          amount: total,
+        })
+      );
+    });
+});
+
+// Update window click handler
+window.addEventListener("click", function (event) {
+  if (event.target.classList.contains("modal")) {
+    const modal = event.target;
+    modal.classList.add("fade-out");
+    setTimeout(() => {
+      modal.style.display = "none";
+      modal.classList.remove("fade-out");
+    }, 300);
+    sessionStorage.removeItem("modalState");
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
   const cartContainer = document.querySelector(".cart-items");
   const itemsCount = document.getElementById("items-count");
   const totalPrice = document.getElementById("total-price");
@@ -306,12 +432,12 @@ document.addEventListener("DOMContentLoaded", function () {
     renderCart();
   });
 
-  document
-    .getElementById("checkout-btn")
-    .addEventListener("click", function () {
-      // Add checkout logic here
-      alert("Proceeding to checkout...");
-    });
+  // document
+  //   .getElementById("checkout-btn")
+  //   .addEventListener("click", function () {
+  //     // Add checkout logic here
+  //     alert("Proceeding to checkout...");
+  //   });
 
   // Initial render
   renderCart();
@@ -357,7 +483,6 @@ async function getCart() {
     );
 
     const data = await response.json();
-    console.log(data.cart);
 
     if (data.success) {
       data.cart.map((ele) => {
@@ -371,7 +496,6 @@ async function getCart() {
             let cart = JSON.parse(localStorage.getItem("cart")) || {};
 
             cart[item.id] = item;
-            console.log(item);
 
             localStorage.setItem("cart", JSON.stringify(cart));
           }
@@ -384,3 +508,55 @@ async function getCart() {
     console.error(error);
   }
 }
+// Add after your existing code
+function generateQR(amount) {
+  const upiUrl = `upi://pay?pa=chakri9346@ibl&pn=VendMaadi&am=${amount}&cu=INR`;
+  const qr = qrcode(0, "L");
+  qr.addData(upiUrl);
+  qr.make();
+
+  document.getElementById("qrcode").innerHTML = qr.createImgTag(5);
+  document.getElementById("modal-amount").textContent = `₹${amount.toFixed(2)}`;
+}
+
+document.getElementById("checkout-btn").addEventListener("click", function () {
+  const total = parseFloat(
+    document.getElementById("total-price").textContent.replace("₹", "")
+  );
+  generateQR(total);
+  document.getElementById("qr-modal").style.display = "block";
+});
+
+document.getElementById("payment-done").addEventListener("click", function () {
+  document.getElementById("qr-modal").style.display = "none";
+  document.getElementById("success-modal").style.display = "block";
+});
+
+// Close modal functionality
+document.querySelectorAll(".close, .close-btn").forEach((button) => {
+  button.addEventListener("click", function () {
+    document.getElementById("qr-modal").style.display = "none";
+    document.getElementById("success-modal").style.display = "none";
+  });
+});
+
+// Clear cart functionality
+document.getElementById("clear-cart").addEventListener("click", function () {
+  document.getElementById("clear-cart-modal").style.display = "block";
+});
+
+document.getElementById("cancel-clear").addEventListener("click", function () {
+  document.getElementById("clear-cart-modal").style.display = "none";
+});
+
+document.getElementById("confirm-clear").addEventListener("click", function () {
+  localStorage.removeItem("cart");
+  location.reload();
+});
+
+// Close modals when clicking outside
+window.addEventListener("click", function (event) {
+  if (event.target.classList.contains("modal")) {
+    event.target.style.display = "none";
+  }
+});

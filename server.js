@@ -226,8 +226,6 @@ app.get("/api/cart", async (req, res) => {
       [userId]
     );
 
-    console.log(`Orders are :  ${existing}`);
-
     await connection.commit();
     //
     res.json({
@@ -339,6 +337,57 @@ app.delete("/api/cart/remove", async (req, res) => {
   } catch (err) {
     await connection.rollback();
     console.error("Cart error:", err);
+    res.status(400).json({
+      success: false,
+      error: err.message,
+      stack: process.env.NODE_ENV === "development" ? err.stack : undefined,
+    });
+  } finally {
+    connection.release();
+  }
+});
+
+app.post("/api/payment", async (req, res) => {
+  // Process payment
+  const connection = await pool.getConnection();
+  try {
+    await connection.beginTransaction();
+    const { userId, cartItems, price } = req.body;
+    const productIds = JSON.parse(cartItems);
+    console.log(userId, productIds, price);
+
+    if (!userId || !productIds || !price) {
+      throw new Error("UserId, ProductIds and Price are required");
+    }
+
+    const [paymentDetails] = await connection.query(
+      "INSERT INTO PaymentHistory (customer_id,payment_method, payment_status, amount) VALUES (?, ?,?,?)",
+      [userId, "mobile_payment", "completed", price]
+    );
+
+    console.log(paymentDetails.insertId);
+
+    for (const productId of productIds) {
+      const orderHistory = await connection.query(
+        "INSERT INTO OrderDetails (payment_id, product_id) VALUES (?, ?)",
+        [paymentDetails.insertId, productId]
+      );
+    }
+
+    await connection.query("DELETE FROM Orders WHERE customer_id = ?", [
+      userId,
+    ]);
+    console.log(`order deleted`);
+
+    await connection.commit();
+    res.json({
+      success: true,
+      message: "Payment successful",
+      paymentId: paymentDetails.insertId,
+    });
+  } catch (err) {
+    await connection.rollback();
+    console.error("Payment error:", err);
     res.status(400).json({
       success: false,
       error: err.message,
